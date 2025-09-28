@@ -3,7 +3,7 @@ import ProjectCard from '../components/project/ProjectCard'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 import Footer from '../components/footer/Footer'
 
 const Project = () => {

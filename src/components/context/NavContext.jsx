@@ -15,7 +15,7 @@ const NavContext = ({ children }) => {
   const navGreenRef = useRef(null);
   const location = useLocation().pathname;
 
-  // Update navbar color based on route
+  
   useEffect(() => {
     if (location === "/project" || location === "/agence" || location === "/blogs") {
       setNavColor("black");
