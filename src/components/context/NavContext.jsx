@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import Navbar from "../navigation/Navbar";
+import Navbar from "../Navigation/Navbar";
 import DesignNavbar from "../Navigation/DesignNavbar";
 
 export const NavbarContext = createContext();
