@@ -1,17 +1,16 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useRef } from 'react'
 import { NavbarContext } from '../context/NavContext'
+import { NavbarColorContext } from '../context/NavContext'
+import { useNavigate } from 'react-router-dom'
 
 const FullScreenNav = () => {
     const fullNavLinksRef = useRef(null)
     const fullScreenRef = useRef(null)
-
     const [navOpen, setNavOpen] = useContext(NavbarContext)
-
-
-
-
+    const [navColor, setNavColor] = useContext(NavbarColorContext)
+    const navigate = useNavigate()
 
     function gsapAnimation() {
         const tl = gsap.timeline()
@@ -58,16 +57,17 @@ const FullScreenNav = () => {
             display: 'none',
         })
     }
-
+    
+    const handleNavigation = (path) => {
+        setNavOpen(false);
+        navigate(path);
+    };
 
     useGSAP(function () {
         if (navOpen) {
-
             gsapAnimation()
         } else {
-
             gsapAnimationReverse()
-
         }
     }, [navOpen])
 
@@ -101,75 +101,71 @@ const FullScreenNav = () => {
                 <div className='py-8'>
                     <div className='link origin-top relative border-t-1 border-white'>
                         <h1 className='font-[lausanne500] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Projets</h1>
-                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50] ' onClick={() => handleNavigation("/project")}>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5 ' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
                             </div>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
                             </div>
                         </div>
-
                     </div>
                     <div className='link origin-top relative border-t-1 border-white'>
-                        <h1 className='font-[lausanne500] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-5 pt-3 uppercase'>Agence</h1>
-                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                        <h1 className='font-[lausanne500] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Agence</h1>
+                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50] '  onClick={() => handleNavigation("/agence")}>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout savoir</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/images/teamMembers/Michele_640x290.jpg?w=640&h=290&s=fc2d5857a514aaf26bec2eb052a2d734" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout savoir</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/images/teamMembers/MEGGIE_640X290_2.jpg?w=640&h=290&s=547adc6f80885f8627de0683f7e03362" alt="" />
                             </div>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout savoir</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/images/teamMembers/Michele_640x290.jpg?w=640&h=290&s=fc2d5857a514aaf26bec2eb052a2d734" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout savoir</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/images/teamMembers/MEGGIE_640X290_2.jpg?w=640&h=290&s=547adc6f80885f8627de0683f7e03362" alt="" />
                             </div>
                         </div>
-
                     </div>
                     <div className='link origin-top relative border-t-1 border-white'>
-                        <h1 className='font-[lausanne500] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-5 pt-3 uppercase'>Contact</h1>
-                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                        <h1 className='font-[lausanne500] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Contact</h1>
+                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50] '  onClick={() => handleNavigation("/contact")}>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour envoyer un fax</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-25 w-10 mx-10 object-cover' src="https://static.thenounproject.com/png/heart-icon-10659-512.png" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour envoyer un fax</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-25 w-10 mx-10 object-cover' src="https://static.thenounproject.com/png/heart-icon-10659-512.png" alt="" />
                             </div>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour envoyer un fax</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-25 w-10 mx-10 object-cover' src="https://static.thenounproject.com/png/heart-icon-10659-512.png" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour envoyer un fax</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-25 w-10 mx-10 object-cover' src="https://static.thenounproject.com/png/heart-icon-10659-512.png" alt="" />
                             </div>
                         </div>
-
                     </div>
                     <div className='link origin-top relative border-y-1 border-white'>
-                        <h1 className='font-[lausanne500] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-5 pt-3 uppercase'>Blogs</h1>
-                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
+                        <h1 className='font-[lausanne500] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Blogue</h1>
+                        <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'  onClick={() => handleNavigation("/blogs")}>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>lire les articles</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/uploads/blog/blogImg/ier.com-16107673482102220.gif" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>lire les articles</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/images/blog/blogImg/50ff59cc0550df5b36543807a58db98c52e01a22274a317eafbfa5266941579b.png?w=640&h=290&s=4f8134f04fe18db7382b99cec63c95f5" alt="" />
                             </div>
                             <div className='moveX flex items-center'>
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl  text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>Pour Tout voir</h2>
-                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>lire les articles</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/uploads/blog/blogImg/ier.com-16107673482102220.gif" alt="" />
+                                <h2 className='whitespace-nowrap font-[lausanne500] lg:text-[8vw] text-5xl text-center lg:leading-[0.8] lg:pt-5 pt-2 uppercase'>lire les articles</h2>
+                                <img className='lg:h-22 h-10 rounded-full shrink-0 lg:w-60 w-30 object-cover mx-5' src="https://k72.ca/images/blog/blogImg/50ff59cc0550df5b36543807a58db98c52e01a22274a317eafbfa5266941579b.png?w=640&h=290&s=4f8134f04fe18db7382b99cec63c95f5" alt="" />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
