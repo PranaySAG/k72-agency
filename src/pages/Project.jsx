@@ -9,36 +9,36 @@ import Footer from '../components/footer/Footer'
 const Project = () => {
   const projects = [
     {
-      image1: '../public/images/project/project_img_1.jpg',
-      image2: '../public/images/project/project_img_2.jpg',
+      image1: 'images/project/project_img_1.jpg',
+      image2: 'images/project/project_img_2.jpg',
     },
     {
-      image1: '../public/images/project/project_img_3.jpg',
-      image2: '../public/images/project/project_img_4.jpg',
+      image1: 'images/project/project_img_3.jpg',
+      image2: 'images/project/project_img_4.jpg',
     },
     {
-      image1: '../public/images/project/project_img_5.jpg',
-      image2: '../public/images/project/project_img_6.jpg',
+      image1: 'images/project/project_img_5.jpg',
+      image2: 'images/project/project_img_6.jpg',
     },
     {
-      image1: '../public/images/project/project_img_7.jpg',
-      image2: '../public/images/project/project_img_8.jpg',
+      image1: 'mages/project/project_img_7.jpg',
+      image2: 'images/project/project_img_8.jpg',
     },
     {
-      image1: '../public/images/project/project_img_9.jpg',
-      image2: '../public/images/project/project_img_10.jpg',
+      image1: 'images/project/project_img_9.jpg',
+      image2: 'images/project/project_img_10.jpg',
     },
     {
-      image1: '../public/images/project/project_img_11.jpg',
-      image2: '../public/images/project/project_img_12.jpg',
+      image1: 'images/project/project_img_11.jpg',
+      image2: 'images/project/project_img_12.jpg',
     },
     {
-      image1: '../public/images/project/project_img_13.jpg',
-      image2: '../public/images/project/project_img_14.jpg',
+      image1: 'images/project/project_img_13.jpg',
+      image2: 'images/project/project_img_14.jpg',
     },
     {
-      image1: '../public/images/project/project_img_15.jpg',
-      image2: '../public/images/project/project_img_16.jpg',
+      image1: 'images/project/project_img_15.jpg',
+      image2: 'images/project/project_img_16.jpg',
     },
   ]
 
