@@ -9,36 +9,36 @@ import Footer from '../components/footer/Footer'
 const Project = () => {
   const projects = [
     {
-      image1: 'https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg',
-      image2: 'https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---Thumbnail-1280x960.jpg',
+      image1: '../public/images/project/project_img_1.jpg',
+      image2: '../public/images/project/project_img_2.jpg',
     },
     {
-      image1: 'https://k72.ca/uploads/caseStudies/OKA/OKA_thumbnail-1280x960.jpg',
-      image2: 'https://k72.ca/uploads/caseStudies/Opto_Reseau_Brand/opto_thumbnail2-1280x960.jpg',
+      image1: '../public/images/project/project_img_3.jpg',
+      image2: '../public/images/project/project_img_4.jpg',
     },
     {
-      image1: 'https://k72.ca/uploads/caseStudies/COUP_FUMANT/CF_thumbnail-1280x960.jpg',
-      image2: 'https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg',
+      image1: '../public/images/project/project_img_5.jpg',
+      image2: '../public/images/project/project_img_6.jpg',
     },
     {
-      image1: 'https://k72.ca/uploads/caseStudies/BEST/BEST_site_menu_Thumbnail-1280x960.jpg',
-      image2: 'https://k72.ca/uploads/caseStudies/A_table/thumbnailimage_atable2-1280x960.jpg',
+      image1: '../public/images/project/project_img_7.jpg',
+      image2: '../public/images/project/project_img_8.jpg',
     },
     {
-      image1: 'https://k72.ca/uploads/caseStudies/SollioAg/thumbnailimage_SollioAg-1280x960.jpg',
-      image2: 'https://k72.ca/uploads/caseStudies/LAMAJEURE_-_Son_sur_mesure/chalaxeur-thumbnail_img-1280x960.jpg',
+      image1: '../public/images/project/project_img_9.jpg',
+      image2: '../public/images/project/project_img_10.jpg',
     },
     {
-      image1: 'https://k72.ca/uploads/caseStudies/OSM/thumbnail_OSM_1280-1280x960.jpg',
-      image2: 'https://k72.ca/uploads/caseStudies/BAnQ_100TEMPS/100temps_Thumbnail-1280x960.jpg',
+      image1: '../public/images/project/project_img_11.jpg',
+      image2: '../public/images/project/project_img_12.jpg',
     },
     {
-      image1: 'https://k72.ca/uploads/caseStudies/CRISIS24/crisis24_behance_1920X1200_cartes-1280x960.jpg',
-      image2: 'https://k72.ca/uploads/caseStudies/Opto/thumbnailimage_opto-1280x960.jpg',
+      image1: '../public/images/project/project_img_13.jpg',
+      image2: '../public/images/project/project_img_14.jpg',
     },
     {
-      image1: 'https://k72.ca/uploads/caseStudies/PME-MTL/PME-MTL_Thumbnail-1280x960.jpg',
-      image2: 'https://k72.ca/uploads/caseStudies/FRUITE/Fruite_thumbnail_bbq-1280x960.jpg',
+      image1: '../public/images/project/project_img_15.jpg',
+      image2: '../public/images/project/project_img_16.jpg',
     },
   ]
 

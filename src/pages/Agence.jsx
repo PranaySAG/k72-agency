@@ -7,8 +7,11 @@ const Agence = () => {
   return (
     <div className='h-full w-full'>
       <AgenceCardAnim/>
+      <div>
       <Cards />
       <Footer/>
+      </div>
+      
     </div>
   )
 }

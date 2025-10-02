@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogCard from '../components/blog/BlogCard'
+import Footer from '../components/footer/Footer'
 
 function Blog() {
 
@@ -22,8 +23,8 @@ function Blog() {
   ]
 
   return (
-   <div className='p-3'>
-      <div className='-mt-10 increase pt-[30vw]  '>
+   <div className=''>
+      <div className='-mt-10 increase pt-[30vw] p-3 '>
         <div className='border-t-1 border-black pt-2 flex flex-col'>
         {imageArray.map((elem, index) => (
           <div key={index} className='hero w-full rounded-2xl h-[500px] mb-2 flex gap-2.5'>
@@ -35,13 +36,14 @@ function Blog() {
         </div>
        <div className='flex w-full'>
          {data.map((val, el) => (
-              <div key={el} className="blog-info text-black flex flex-col w-full">
-                <p className="date">{val.date}</p>
-                <h2 className="heading">{val.heading}</h2>
+              <div key={el} className="blog-info text-black flex flex-col w-full pb-10">
+                <p className="date font-[lausanne500] text-2xl">{val.date}</p>
+                <h2 className="heading font-[lausanne500] text-4xl bold hover:underline transition-all">{val.heading}</h2>
               </div>
             ))}
        </div>
       </div>
+      <Footer/>
     </div>
   )
 }

@@ -13,7 +13,7 @@ function Footer() {
   };
 
   return (
-    <div className="h-screen w-full flex flex-col justify-between p-10 bg-black relative">
+    <div className="h-[30vw] w-full flex flex-col justify-between p-10 bg-black relative">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
         <div className="flex gap-6">
           {heading.map((item, index) => (

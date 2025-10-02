@@ -56,7 +56,7 @@ function AgenceCardAnim() {
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
-        start: 'top 20%',
+        start: 'top 16%',
         end: 'top -130%',
         pin: true,
         pinSpacing: true,
@@ -78,11 +78,11 @@ function AgenceCardAnim() {
     })
   })
   return (
-    <div className='parent'>
+    <div className='parent h-full'>
       <div id='page1' className='py-1'>
-        <div
+         <div
           ref={imageDivRef}
-          className='absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] lg:top-20 top-50 lg:left-[31vw] left-[31vw]'
+          className='absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] lg:top-16 top-50 lg:left-[31vw] left-[31vw]'
         >
           <img
             ref={imageRef}
