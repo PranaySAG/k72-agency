@@ -21,7 +21,7 @@ const Project = () => {
       image2: 'images/project/project_img_6.jpg',
     },
     {
-      image1: 'mages/project/project_img_7.jpg',
+      image1: 'images/project/project_img_7.jpg',
       image2: 'images/project/project_img_8.jpg',
     },
     {
